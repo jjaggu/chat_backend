@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Chat Application</h1>
+
+        <div id="registerForm" style="display:block;">
+            <h2>Register</h2>
+            <input type="text" id="registerUsername" placeholder="Username" />
+            <input type="password" id="registerPassword" placeholder="Password" />
+            <button onclick="registerUser()">Register</button>
+            <p><a href="#" onclick="showLogin()">Already have an account? Login</a></p>
+        </div>
+        
+        <div id="loginForm" style="display:block;">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button onclick="loginUser()">Login</button>
+            <p><a href="#" onclick="showRegister()">Don't have an account? Register</a></p>
+        </div>
+        
+       
+
+        <!-- Chat Section -->
+        <div id="chatSection" style="display:none;">
+            <h2>Welcome, <span id="chatUsername"></span></h2>
+            <div id="messages"></div>
+            <input type="text" id="recipient" placeholder="Recipient" />
+            <textarea id="messageContent" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+            <button onclick="getMessages()">Refresh Messages</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
