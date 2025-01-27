@@ -12,12 +12,9 @@
         <h1>Chat Application</h1>
 
         <!-- Register Form -->
-        <div id="registerForm" style="display:none;">
+        <div id="registerForm">
             <h2>Register</h2>
-            <div id="registerError" style="color: red; display:none;"></div>
-            <label for="registerUsername">Username</label>
             <input type="text" id="registerUsername" placeholder="Username" />
-            <label for="registerPassword">Password</label>
             <input type="password" id="registerPassword" placeholder="Password" />
             <button onclick="registerUser()">Register</button>
             <p><a href="#" onclick="showLogin()">Already have an account? Login</a></p>
@@ -26,10 +23,7 @@
         <!-- Login Form -->
         <div id="loginForm" style="display:none;">
             <h2>Login</h2>
-            <div id="loginError" style="color: red; display:none;"></div>
-            <label for="loginUsername">Username</label>
             <input type="text" id="loginUsername" placeholder="Username" />
-            <label for="loginPassword">Password</label>
             <input type="password" id="loginPassword" placeholder="Password" />
             <button onclick="loginUser()">Login</button>
             <p><a href="#" onclick="showRegister()">Don't have an account? Register</a></p>
@@ -43,13 +37,8 @@
             <textarea id="messageContent" placeholder="Type your message..."></textarea>
             <button onclick="sendMessage()">Send Message</button>
             <button onclick="getMessages()">Refresh Messages</button>
-            <button onclick="logoutUser()">Logout</button>
         </div>
     </div>
-
-    <noscript>
-        <div style="color: red;">This application requires JavaScript to function. Please enable JavaScript in your browser.</div>
-    </noscript>
 
     <script src="app.js"></script>
 </body>

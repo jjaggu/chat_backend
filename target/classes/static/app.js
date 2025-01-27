@@ -2,19 +2,6 @@ const apiUrl = 'http://localhost:8080/api';
 
 let loggedInUser = '';
 
-document.addEventListener("DOMContentLoaded", () => {
-    loggedInUser = sessionStorage.getItem("loggedInUser");
-
-    if (loggedInUser) {
-        // User is logged in
-        showChatSection(loggedInUser); // Show chat section
-        getMessages();
-    } else {
-        // User is not logged in
-        showLogin();
-    }
-});
-
 function showLogin() {
     document.getElementById('loginForm').style.display = 'block';
     document.getElementById('registerForm').style.display = 'none';
@@ -64,11 +51,6 @@ function loginUser() {
         username: username,
         password: password
     };
-    if (!username || !password) {
-        document.getElementById('loginError').style.display = 'block';
-        document.getElementById('loginError').innerText = 'Both fields are required!';
-        return;
-    }
 
     // Send POST request with the user object as JSON body
     fetch(`${apiUrl}/login`, {
@@ -81,7 +63,6 @@ function loginUser() {
     .then(response => response.text())
     .then(data => {
         if (data.includes('Login successful')) {
-            sessionStorage.setItem('loggedInUser', username);
             showChatSection(username);
             getMessages();
         } else {
